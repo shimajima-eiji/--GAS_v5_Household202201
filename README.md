@@ -1,0 +1,2 @@
+# GAS_v5_Household202201
+モバイルアプリとLINE連携デモ用
