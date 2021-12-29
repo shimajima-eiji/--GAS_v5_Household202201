@@ -13,6 +13,8 @@ function doPost(e) {
   if(text.length == 0 && text.shift() != "@line") {
     return;
   }
+  // @lineの文字列を消しておく
+  text.shift();
 
   // 処理を実行
   message = main(text);
