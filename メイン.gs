@@ -14,15 +14,36 @@ function main(text) {
       memo: 4,   // 備考
     }
 
-    data = ["(未入力)", "(未入力)", "(未入力)", TODAY, ""];  // [TODO]array_indexに合わせて可変, array_indexもヘッダから取りたい
-    message = ""
-    for(index in text) {
-      word = text[index].split("は");
-      if(word.length != 2) {
-        message = "[Skip]" + message + "【" + word[0] + "】の登録失敗。区切り文字「は」を間違えてない？\n";
-      }
+    data = [];
+    message = "";
 
-      data[ array_index[ keys[word[0]] ] ] = word[1];
+    // [@line 登録]以降の半角スペースの数だけ実施する
+    for(index in text) {
+
+      // 取得した文字を「は」で分ける。
+      word = text[index].split("は");
+
+      // [TODO]入れたい値に「は」が含まれる可能性がある
+      if(word.length == 2            // 「は」で区切られていたら2つしか出てこないはず
+        && keys[word[0]] != undefined  // keysのkey要素に該当している
+        && word[1] != undefined        // 何か入っている
+      ) {
+
+        // [TODO]array_indexに合わせて可変, array_indexもヘッダから取りたい
+        // データの初期値を設定する
+        data = ["(未入力)", "(未入力)", "(未入力)", TODAY, ""];
+        data[ array_index[ keys[word[0]] ] ] = word[1];
+
+      // 不正な入力をしていた場合の処理
+      } else {
+        message = message + "[Skip]【" + word[0] + "】の登録失敗。区切り文字「は」を間違えてない？\n";
+      }
+    }
+
+    // 間違えて登録処理が走らないよう、先に弾いておく
+    if(data.length == 0) {
+      message += "[Skip] 登録処理を中断。";
+      return message;
     }
 
     try {
