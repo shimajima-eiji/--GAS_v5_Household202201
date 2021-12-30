@@ -5,8 +5,8 @@
 function initialize() {
   local_set("channel_access_token", "(your access token)")
   local_set("group_id", "(your group id)");
-  local_set("spreadsheet_id", "1_Ry3hQB1JNmJ_ijONtqyx56kC9Lnt3hrPD7KbENuK24")
-  local_set("spreadsheet_sheetname", "家計簿_202201");
+  local_set("spreadsheet_id", "(your sheet id)")
+  local_set("spreadsheet_sheetname", "(your sheet name)");
 }
 // */
 
