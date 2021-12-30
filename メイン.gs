@@ -16,6 +16,8 @@ function main(text) {
 
     data = [];
     message = "";
+    // [TODO]array_indexに合わせて可変, array_indexもヘッダから取りたい
+    data = ["(未入力)", "(未入力)", "(未入力)", TODAY, ""];
 
     // [@line 登録]以降の半角スペースの数だけ実施する
     for(index in text) {
@@ -29,9 +31,7 @@ function main(text) {
         && word[1] != undefined        // 何か入っている
       ) {
 
-        // [TODO]array_indexに合わせて可変, array_indexもヘッダから取りたい
         // データの初期値を設定する
-        data = ["(未入力)", "(未入力)", "(未入力)", TODAY, ""];
         data[ array_index[ keys[word[0]] ] ] = word[1];
 
       // 不正な入力をしていた場合の処理
