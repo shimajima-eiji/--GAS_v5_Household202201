@@ -1,5 +1,5 @@
 function doPost(e) {
-  // 引数に必要なデータを検証
+  // LINE以外から呼び出されたと思われる場合は処理させない
   if(e == undefined
     || e.postData == undefined
     || e.postData.contents == undefined
