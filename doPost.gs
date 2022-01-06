@@ -1,8 +1,8 @@
 function doPost(e) {
   // 引数に必要なデータを検証
   if(e == undefined
-    && e.postData == undefined
-    && e.postData.contents == undefined
+    || e.postData == undefined
+    || e.postData.contents == undefined
   ) return;
 
   // [TODO] parse処理自体の成功チェックや、parseしたjsonの妥当性検証
