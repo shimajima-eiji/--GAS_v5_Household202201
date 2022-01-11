@@ -12,14 +12,22 @@
 - [LineBot:リッチメニュー](https://manager.line.biz/account/@？？？/richmenu)
   - アカウントID: 
 
-## バージョン
-### 試行版：ver1.0.4.2
+## リリースバージョン
+ver1.0  
+(開発時はver 1.1.0.7(https://github.com/shimajima-eiji/GAS_v5_Household202201/pull/5))
 
 ## 環境変数
 |key|value|用途|備考|
 |---|---|---|---|
 |channel_access_token||認証||
 |group_id||グループに送信するために必要|
+
+## ライブラリ
+[Apps Script](https://github.com/shimajima-eiji/--GAS_v5_Household202201/blob/main/appsscript.json)を参照。
+
+|名称(userSymbol)|ID(libraryId)|バージョン(version)|用途|
+|---|---|---|---|
+|dayjs|1ShsRhHc8tgPy5wGOzUvgEhOedJUQD53m-gd8lG2MOgs-dXC_aCZn9lFB|1||
 
 ## デバッガ
 ### doPost.gs
@@ -54,5 +62,5 @@ JSON形式
 |result|get/set|`Success` or `Failed`|
 |message|get|`key's value` or `comment`|
 
-## READMEのバージョン
+## テンプレートのバージョン
 ver2022.01.11
